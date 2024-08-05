@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GnccfChords.MainPage">
+
+    <Grid>
+        <Image Source="main_bg.png"
+               Aspect="AspectFit"
+               HorizontalOptions="Center" />
+
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Button Text="Get Started"
+                    BackgroundColor= "#8E634D"
+                    Clicked="StartPage"
+                    TextColor="#f1eae5"
+                    FontAttributes="Bold"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.4, AutoSize, AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+    </Grid>
+
+</ContentPage>

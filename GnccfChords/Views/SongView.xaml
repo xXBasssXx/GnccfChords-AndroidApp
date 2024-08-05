@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GnccfChords.Views.SongView"
+             Title="Songs">
+    <Grid BackgroundColor="#f1eae5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Search bar row -->
+            <RowDefinition Height="Auto" />
+            <!-- ActivityIndicator row -->
+            <RowDefinition Height="*" />
+            <!-- ListView row -->
+            <RowDefinition Height="Auto" />
+            <!-- Button row -->
+        </Grid.RowDefinitions>
+
+        <SearchBar Grid.Row="0"
+                   x:Name="searchBar"
+                   Placeholder="Enter song title..."
+                   Text="{Binding SearchText, Mode=TwoWay}" />
+
+        <ActivityIndicator Grid.Row="1"
+                           IsRunning="{Binding IsLoading}"
+                           Color="Brown"
+                           HorizontalOptions="Center" />
+
+        <RefreshView Grid.Row="2" IsRefreshing="{Binding IsRefreshed}" Command="{Binding RefreshCommand}">
+            <ListView ItemsSource="{Binding SongsResult}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1"
+                                       Text="{Binding SongName}"
+                                       FontAttributes="Bold"
+                                       FontSize="Title" />
+                                <Label Grid.Column="4"
+                                       Text="{Binding Artist}"
+                                       FontAttributes="Italic"
+                                       FontSize="Subtitle"
+                                       HorizontalTextAlignment="End"
+                                       VerticalTextAlignment="End"
+                                       Margin="15, 0, 0, 0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="3">
+            <Button Text="+" FontSize="Large" FontAttributes="Bold" WidthRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,5" Clicked="AddChordsPage" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

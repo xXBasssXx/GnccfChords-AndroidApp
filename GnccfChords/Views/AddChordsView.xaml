@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GnccfChords.Views.AddChordsView"
+             Title="Add Chords">
+    <ScrollView>
+        <Grid BackgroundColor="#f1eae5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" FontSize="Title" Text="Song Title" Margin="5, 15, 0, 0" />
+                <Entry Text="{Binding SongName}"
+                       Placeholder="Song Title"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="5, 5, 0, 0"
+                       FontSize="Subtitle" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Song Artist" Margin="5, 5, 0, 0" />
+                <Entry Text="{Binding Artist}"
+                       Placeholder="Song Artist"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="5, 5, 0, 0"
+                       FontSize="Subtitle" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Song Key" Margin="5, 5, 0, 0" />
+                <Entry Text="{Binding ChordKey}"
+                       Placeholder="Enter key"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="5, 5, 0, 0"
+                       FontSize="Subtitle"
+                       MaxLength="2" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Intro" Margin="5, 5, 0, 0" />
+                <Editor Text="{Binding IntroChord}"
+                        Placeholder="Intro chords..."
+                        HeightRequest="80"
+                        FontSize="Subtitle" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Pre-Chorus" Margin="5, 5, 0, 0" />
+                <Editor Text="{Binding PreChorusChords}"
+                        Placeholder="Pre-chorus chords..."
+                        HeightRequest="80"
+                        FontSize="Subtitle" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Chorus" Margin="5, 5, 0, 0" />
+                <Editor Text="{Binding ChorusChord}"
+                        Placeholder="Chorus chords..."
+                        HeightRequest="80"
+                        FontSize="Subtitle" />
+                <Label FontAttributes="Bold" FontSize="Title" Text="Bridge" Margin="5, 5, 0, 0" />
+                <Editor Text="{Binding BridgeChord}"
+                        Placeholder="Bridge chords..."
+                        HeightRequest="80"
+                        FontSize="Subtitle" />
+            </VerticalStackLayout>
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <Button Command="{Binding SaveSongAndChord}" Text="Save" FontSize="Medium" FontAttributes="Bold" WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,5,5" />
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
