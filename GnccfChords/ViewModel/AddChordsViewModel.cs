@@ -96,8 +96,8 @@ namespace GnccfChords.ViewModel
                 OnPropertyChanged();
             }
         }
-        private char _chordKey;
-        public char ChordKey
+        private string _chordKey;
+        public string ChordKey
         {
             get
             {
@@ -145,7 +145,7 @@ namespace GnccfChords.ViewModel
                     var chord = new Chords
                     {
                         SongId = content,
-                        ChordKey = ChordKey,
+                        ChordKey = ChordKey.ToCharArray()[0],
                         IntroChords = IntroChord,
                         PreChorusChords = PreChorusChords,
                         ChorusChords = ChorusChord,

@@ -26,7 +26,7 @@
                            HorizontalOptions="Center" />
 
         <RefreshView Grid.Row="2" IsRefreshing="{Binding IsRefreshed}" Command="{Binding RefreshCommand}">
-            <ListView ItemsSource="{Binding SongsResult}">
+            <ListView ItemsSource="{Binding SongsResult}" ItemSelected="ViewDetails">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -45,6 +45,11 @@
                                        Text="{Binding SongName}"
                                        FontAttributes="Bold"
                                        FontSize="Title" />
+                                <Label Grid.Column="2"
+                                       Text="{Binding SongKey}"
+                                       Margin="10, 0, 0, 0"
+                                       FontAttributes="None"
+                                       FontSize="Medium" />
                                 <Label Grid.Column="4"
                                        Text="{Binding Artist}"
                                        FontAttributes="Italic"

@@ -26,8 +26,7 @@
                        Placeholder="Enter key"
                        HorizontalOptions="FillAndExpand"
                        Margin="5, 5, 0, 0"
-                       FontSize="Subtitle"
-                       MaxLength="2" />
+                       FontSize="Subtitle" />
                 <Label FontAttributes="Bold" FontSize="Title" Text="Intro" Margin="5, 5, 0, 0" />
                 <Editor Text="{Binding IntroChord}"
                         Placeholder="Intro chords..."

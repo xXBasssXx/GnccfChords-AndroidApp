@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GnccfChords.Models
 {
-    public class Song
+    public class SongChords
     {
-        public Guid SongId { get; set; }
+        public Guid? ChordPartId { get; set; }
         public string SongName { get; set; }
-        public string? Artist { get; set; }
-        public string? SongKey { get; set; }
+        public string ChordKey { get; set; }
+        public string Chords { get; set; }
     }
 }

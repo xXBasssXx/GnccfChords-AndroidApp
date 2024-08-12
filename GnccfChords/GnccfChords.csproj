@@ -72,6 +72,9 @@
 	  <MauiXaml Update="Views\AddChordsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\SongDetailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SongView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
