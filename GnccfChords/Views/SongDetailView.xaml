@@ -9,7 +9,8 @@
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="StartAndExpand"
                 FontAttributes="Bold"
-                FontSize="Large">
+                FontSize="Large"
+                TextColor="Brown">
                 <Label.Text>
                     <MultiBinding StringFormat="{}{0} - ">
                         <Binding Path="SongName" />
@@ -21,7 +22,8 @@
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="StartAndExpand"
                 FontAttributes="Bold"
-                FontSize="Large" />
+                FontSize="Large"
+                TextColor="Brown" />
         </HorizontalStackLayout>
         
         <Label 
@@ -29,7 +31,8 @@
             VerticalOptions="StartAndExpand" 
             HorizontalOptions="StartAndExpand"
             FontAttributes="Bold"
-            FontSize="Large" />
+            FontSize="Large"
+            TextColor="Brown"/>
         
     </VerticalStackLayout>
 </ContentPage>

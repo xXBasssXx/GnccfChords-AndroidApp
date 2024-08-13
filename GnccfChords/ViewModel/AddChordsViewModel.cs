@@ -57,6 +57,19 @@ namespace GnccfChords.ViewModel
                 OnPropertyChanged();
             }
         }
+        private string _verseChord;
+        public string VerseChord
+        {
+            get
+            {
+                return _verseChord;
+            }
+            set
+            {
+                _verseChord = value;
+                OnPropertyChanged();
+            }
+        }
         private string _preChorusChords;
         public string PreChorusChords
         {
@@ -130,6 +143,13 @@ namespace GnccfChords.ViewModel
 
                 var songEndpoint = $"{gnccfApi}/Songs";
                 var chordEndpoint = $"{gnccfApi}/ChordParts";
+
+                var byteArray = Encoding.ASCII.GetBytes($"{APIEndpoints.UserName}:{APIEndpoints.Password}");
+                var base64String = Convert.ToBase64String(byteArray);
+
+                // Add the Authorization header
+                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", base64String);
+
                 var song = new Song
                 {
                     SongName = SongName,
@@ -147,6 +167,7 @@ namespace GnccfChords.ViewModel
                         SongId = content,
                         ChordKey = ChordKey.ToCharArray()[0],
                         IntroChords = IntroChord,
+                        Verse = VerseChord,
                         PreChorusChords = PreChorusChords,
                         ChorusChords = ChorusChord,
                         BridgeChords = BridgeChord,

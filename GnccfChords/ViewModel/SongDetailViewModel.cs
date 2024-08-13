@@ -67,6 +67,11 @@ namespace GnccfChords.ViewModel
                 var gnccfApi = APIEndpoints.GnccfChordsAPI;
 
                 var endpoint = $"{gnccfApi}/ChordParts?songId={songId}";
+                var byteArray = Encoding.ASCII.GetBytes($"{APIEndpoints.UserName}:{APIEndpoints.Password}");
+                var base64String = Convert.ToBase64String(byteArray);
+
+                // Add the Authorization header
+                _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", base64String);
 
                 var response = await _httpClient.GetAsync(endpoint);
 

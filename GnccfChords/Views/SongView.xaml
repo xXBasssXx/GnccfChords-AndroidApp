@@ -18,7 +18,8 @@
         <SearchBar Grid.Row="0"
                    x:Name="searchBar"
                    Placeholder="Enter song title..."
-                   Text="{Binding SearchText, Mode=TwoWay}" />
+                   Text="{Binding SearchText, Mode=TwoWay}"
+                   TextColor="Brown" />
 
         <ActivityIndicator Grid.Row="1"
                            IsRunning="{Binding IsLoading}"
@@ -44,19 +45,22 @@
                                 <Label Grid.Column="1"
                                        Text="{Binding SongName}"
                                        FontAttributes="Bold"
-                                       FontSize="Title" />
+                                       FontSize="Title"
+                                       TextColor="Brown" />
                                 <Label Grid.Column="2"
                                        Text="{Binding SongKey}"
                                        Margin="10, 0, 0, 0"
                                        FontAttributes="None"
-                                       FontSize="Medium" />
+                                       FontSize="Medium"
+                                       TextColor="Brown" />
                                 <Label Grid.Column="4"
                                        Text="{Binding Artist}"
                                        FontAttributes="Italic"
                                        FontSize="Subtitle"
                                        HorizontalTextAlignment="End"
                                        VerticalTextAlignment="End"
-                                       Margin="15, 0, 0, 0"/>
+                                       Margin="15, 0, 0, 0" 
+                                       TextColor="Brown" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -65,7 +69,7 @@
         </RefreshView>
 
         <StackLayout Orientation="Horizontal" Grid.Row="3">
-            <Button Text="+" FontSize="Large" FontAttributes="Bold" WidthRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,5" Clicked="AddChordsPage" />
+            <Button Text="+" FontSize="Large" FontAttributes="Bold" WidthRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,5" Clicked="AddChordsPage" BackgroundColor="Brown" TextColor="AntiqueWhite" />
         </StackLayout>
     </Grid>
 </ContentPage>
