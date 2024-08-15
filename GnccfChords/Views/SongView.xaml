@@ -40,7 +40,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="1"
                                        Text="{Binding SongName}"
@@ -60,7 +60,9 @@
                                        HorizontalTextAlignment="End"
                                        VerticalTextAlignment="End"
                                        Margin="15, 0, 0, 0" 
-                                       TextColor="Brown" />
+                                       TextColor="Brown"
+                                       MaxLines="1"
+                                       LineBreakMode="TailTruncation" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
